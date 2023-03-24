@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App Bridge Function 測試</title>
+    <script defer="defer" src="test_lib.js"></script>
+    <style>
+      /* CSS 樣式 */
+      body {
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+      h1 {
+        margin: 0;
+      }
+      .container {
+        margin: 50px auto;
+        max-width: 600px;
+        padding: 0 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0 20px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      input[type="submit"] {
+        background-color: #333;
+        border: none;
+        color: #fff;
+        padding: 12px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>App Bridge Function 測試</h1>
+    </header>
+    <div class="container">
+      <div>
+        App Bridge狀態：
+        <p id="app-bridge-status">偵測中...</p>
+      </div>
+      <form id="my-form">
+        <label for="function-name">輸入 app-bridge function 名稱：</label>
+        <input type="text" id="function-name" name="function-name" />
+        <input type="submit" value="送出" />
+      </form>
+    </div>
+    <script defer="defer">
+      function handleFormSubmit(event) {
+        event.preventDefault();
+        const functionName = document.getElementById("function-name").value;
+        callAppBridgeFunction(functionName);
+      }
+
+      const form = document.getElementById("my-form");
+      form.addEventListener("submit", handleFormSubmit);
+    </script>
+  </body>
+</html>
