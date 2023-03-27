@@ -74,7 +74,7 @@
       function handleFormSubmit(event) {
         event.preventDefault();
         const functionName = document.getElementById("function-name").value;
-        callAppBridgeFunction(functionName, { type: "test_case_01", params: { name: 'test', value: '123' } });
+        callAppBridgeFunction(functionName, JSON.stringify({ type: "test_case_01", params: { name: 'test', value: '123' } }));
       }
 
       const form = document.getElementById("my-form");
