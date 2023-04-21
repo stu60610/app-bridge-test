@@ -4,6 +4,10 @@ function getBridge() {
   return window.WebViewInterface;
 }
 
+function checkIsInApp() {
+  return window.WebViewInterface ? true : false;
+}
+
 function isUAInApp() {
   return !!(window.navigator.userAgent || '').match(/\/IN_WEBVIEW$/);
 }

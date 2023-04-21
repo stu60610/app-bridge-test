@@ -65,16 +65,14 @@
         <p id="app-bridge-status">偵測中...</p>
       </div>
       <form id="my-form">
-        <label for="function-name">輸入 app-bridge function 名稱：</label>
-        <input type="text" id="function-name" name="function-name" />
+        <label for="function-name">postMessage with default test payload</label>
         <input type="submit" value="送出" />
       </form>
     </div>
     <script defer="defer">
       function handleFormSubmit(event) {
         event.preventDefault();
-        const functionName = document.getElementById("function-name").value;
-        callAppBridgeFunction(functionName, JSON.stringify({ type: "test_case_01", params: { name: 'test', value: '123' } }));
+        callAppBridgeFunction('postMessage', JSON.stringify({ type: "test_case_01", params: { name: 'test', value: '123' } }));
       }
 
       const form = document.getElementById("my-form");
