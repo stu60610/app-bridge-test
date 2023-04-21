@@ -1,6 +1,6 @@
 1. To check if the App Bridge is available
 ```
-getBridge();
+checkIsInApp();
 ```
 2. Call an registered function to App
 ```
