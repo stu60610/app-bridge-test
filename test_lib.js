@@ -20,11 +20,9 @@ function callAppBridgeFunction(name, payload) {
   const bridge = getBridge();
   if (bridge && bridge[name]) {
     bridge[name](payload);
-    document.getElementById("result-message").textContent = "呼叫 " + name +" 成功";
   }
   if (bridge && bridge.callHandler) {
     bridge.callHandler(name, { payload }, () => {});
-    document.getElementById("result-message").textContent = "呼叫 " + name + " 成功";
   }
 }
 
