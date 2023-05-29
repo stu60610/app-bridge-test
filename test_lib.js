@@ -43,8 +43,8 @@ if (isUAInApp()) {
 checkAppBridge();
 
 if (getBridge()) {
-  addAppBridgeFunction('testAlert', () => {
-    alert('這是一個來自於 Flutter 的請求');
+  addAppBridgeFunction('testAlert', (payload) => {
+    alert('這是一個來自於 Flutter 的請求, payload = ' + payload);
   });
 }
 
