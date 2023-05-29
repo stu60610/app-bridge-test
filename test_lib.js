@@ -26,6 +26,10 @@ function callAppBridgeFunction(name, payload) {
   }
 }
 
+function addAppBridgeFunction(name, func) {
+  window.WebViewInterface[name] = func;
+}
+
 function checkAppBridge() {
   const result = getBridge();
   const message = result ? "可用" : "不可用";
@@ -37,4 +41,11 @@ if (isUAInApp()) {
 } 
 
 checkAppBridge();
+
+if (getBridge()) {
+  addAppBridgeFunction('testAlert', () => {
+    alert('這是一個來自於 Flutter 的請求');
+  });
+}
+
 //# sourceMappingURL=index.js.map
