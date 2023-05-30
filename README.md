@@ -7,7 +7,7 @@ checkIsInApp();
 callAppBridgeFunction(<func_name>, <payload>);
 ```
 ```
-Ex. callAppBridgeFunction('handleBannerClick', JSON.stringify({ url: 'https://www.google.com', isExternal: true }));
+Ex. callAppBridgeFunction('handleBannerClick', { url: 'https://www.google.com', isExternal: true });
 ```
 
 3. To register an function for App calling

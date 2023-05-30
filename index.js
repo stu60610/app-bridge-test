@@ -11,7 +11,7 @@ function checkIsInApp() {
 function callAppBridgeFunction(name, payload) {
   const bridge = getBridge();
   if (bridge && bridge.postMessage) {
-    bridge.postMessage({ type: name, params: payload })
+    bridge.postMessage(JSON.stringify({ type: name, params: payload }));
   }
 }
 
